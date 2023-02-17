@@ -13,5 +13,8 @@
             "Bootsetrap\\Bootsetrapmd\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+            "laravel/framework": "^9.0",
+        "laravel/legacy-factories": "^1.0"
+    }
 }
