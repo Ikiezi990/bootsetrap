@@ -13,10 +13,6 @@
             "Bootsetrap\\Bootsetrapmd\\": "src/"
         }
     },
-  "require": {
-        "php": ">=5.6",
-        "illuminate/support": ">=5.4"
-    },
         "extra": {
       "laravel": {
         "providers": [
