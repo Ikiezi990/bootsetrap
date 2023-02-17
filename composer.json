@@ -1,7 +1,19 @@
 {
     "name": "bootsetrap/bootsetrapmd",
-    "description": "A short description of what your package does",
-    "require": {
-        "php": ">=7.4"
-    }
+    "type": "library",
+    "description": "aaaaaaa",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "rizki",
+            "email": "rizkifahrezi990@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Bootsetrap\\Bootsetrapmd\\": "src/"
+        }
+    },
+    "require": {}
 }
