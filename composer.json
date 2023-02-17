@@ -9,7 +9,6 @@
             "email": "rizkifahrezi990@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Bootsetrap\\Bootsetrapmd\\": "src/"
