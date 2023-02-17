@@ -16,5 +16,6 @@
     "require": {
             "laravel/framework": "^9.0",
         "laravel/legacy-factories": "^1.0"
-    }
+    },
+    "prefer-stable": true
 }
