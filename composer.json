@@ -20,10 +20,10 @@
         "extra": {
       "laravel": {
         "providers": [
-          "\\Ladumor\\LaravelPwa\\PWAServiceProvider"
+          "\\Bootsetrap\\Bootsetrapmd\\Bootsetrapmd"
         ],
         "aliases": {
-          "LaravelPwa": "Ladumor\\LaravelPwa\\LaravelPwa"
+          "test": "Bootsetrap\\Bootsetrapmd\\Bootsetrapmd"
         }
       }
     }
