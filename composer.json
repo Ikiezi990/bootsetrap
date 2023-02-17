@@ -8,6 +8,7 @@
             "email": "rizkifahrezi990@gmail.com"
         }
     ],
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Bootsetrap\\Bootsetrapmd\\": "src/"
@@ -15,7 +16,9 @@
     },
     "require": {
             "laravel/framework": "^9.0",
-        "laravel/legacy-factories": "^1.0"
+        "laravel/legacy-factories": "^1.0",
+             "monolog/monolog": "1.0.*@beta",
+        "acme/foo": "@dev"
     },
     "prefer-stable": true
 }
