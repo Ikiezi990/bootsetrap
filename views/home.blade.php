@@ -1,41 +1,40 @@
-@extends('layouts.app')
+@extends('layouts.appAdmin')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Menu Aplikasi') }}</div>
 
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title">Menu Kategori</h4>
-                                        <a href="{{ route('kategori.index') }}" class="btn btn-primary">Lihat Data
-                                            Kategori</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title">Menu Produk</h4>
-                                        <a href="{{ route('produk.index') }}" class="btn btn-primary">Lihat Data
-                                            Produk</a>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="row">
+        <div class="col-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-uppercase text-center">Produk</h5>
+                    <center>
+                        <i class="ti-archive text-success " style="font-size: 50px;margin:auto;"></i>
+                    </center>
+                        <h2 class="text-center mt-3">
+                        <div class="alert alert-success">
+                            {{ $produk }}
                         </div>
+                        </h2>
                     </div>
                 </div>
             </div>
-        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-uppercase text-center">Kategori</h5>
+                    <center>
+                        <i class="ti-pin-alt text-success " style="font-size: 50px;margin:auto;"></i>
+                    </center>
+                        <h2 class="text-center mt-3">
+                        <div class="alert alert-success">
+                            {{ $kategori }}
+                        </div>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
     </div>
+
+
 @endsection

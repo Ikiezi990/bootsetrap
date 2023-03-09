@@ -9,6 +9,7 @@
                         <img class="card-img-top" src="{{ asset('gambar_produk/' . $row->gambar) }}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">{{ $row->nama_produk }}</h5>
+                            <h6 class="card-title">Rp. {{ number_format($row->harga) }};</h6>
                             <div class="paragraph" style="max-height: 80px;overflow: hidden;">
 
                                 <p class="card-text">{{ $row->deskripsi }}</p>

@@ -15,6 +15,7 @@ class ProdukController extends Controller
      */
     public function index()
     {
+        $data['title'] = "Data Produk";
         $data['data'] = Produk::all();
         return view('produk.index', $data);
     }
@@ -26,6 +27,7 @@ class ProdukController extends Controller
      */
     public function create()
     {
+        $data['title'] = "Data Kategori";
         $data['kategori'] = Kategori::all();
         return view('produk.create', $data);
     }
@@ -78,6 +80,7 @@ class ProdukController extends Controller
      */
     public function edit($id)
     {
+        $data['title'] = "Edit Data Produk";
         $data['data'] = Produk::where('id', $id)->first();
         $data['kategori'] = Kategori::all();
         return view('produk.edit', $data);

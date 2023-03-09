@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.appAdmin')
 
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">{{ __('Edit Data Produk') }}</div>
+                    <div class="card-header">Masukan Data Informasi Produk</div>
 
                     <div class="card-body">
                         @if ($errors->any())

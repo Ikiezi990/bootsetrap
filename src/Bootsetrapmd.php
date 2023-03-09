@@ -19,6 +19,9 @@ class Bootsetrapmd extends ServiceProvider
         ], 'bootsetrap');
         $this->publishes([
             __DIR__ . '/../routes/web.php' => public_path('routes/web.php'),
+            __DIR__ . '/../apatars.jpg' => public_path('apatars.jpg'),
+            __DIR__ . '/../logo.png' => public_path('logo.png'),
+            __DIR__ . '/../template' => public_path('template'),
         ], 'bootsetrap');
         $this->publishes([
             __DIR__ . '/../views' => resource_path('views'),

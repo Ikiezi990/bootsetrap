@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kategori;
+use App\Models\Produk;
 
 class KategoriController extends Controller
 {
@@ -14,6 +15,7 @@ class KategoriController extends Controller
      */
     public function index()
     {
+        $data['title'] = "Data Kategori";
         $data['kategori'] = Kategori::all();
         return view('kategori.index', $data);
     }
@@ -25,7 +27,8 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        return view('kategori.create');
+        $data['title'] = "Tambah Data Kategori";
+        return view('kategori.create',$data);
     }
 
     /**
@@ -43,7 +46,7 @@ class KategoriController extends Controller
             'nama_kategori' => $request->nama_kategori,
         ];
         Kategori::insert($data);
-
+        alert()->success('sukses' , 'Data kategori berhasil di simpan !');
         return redirect(route('kategori.index'));
     }
 
@@ -66,6 +69,7 @@ class KategoriController extends Controller
      */
     public function edit($id)
     {
+        $data['title'] = "Update Data Kategori";
         $data['data'] = Kategori::where('id', $id)->first();
         return view('kategori.edit', $data);
     }
@@ -86,6 +90,7 @@ class KategoriController extends Controller
             'nama_kategori' => $request->nama_kategori,
         ];
         Kategori::where('id', $id)->update($data);
+        alert()->success('sukses' , 'Data kategori berhasil di Edit !');
         return redirect(route('kategori.index'));
     }
 
@@ -97,7 +102,13 @@ class KategoriController extends Controller
      */
     public function destroy($id)
     {
-        Kategori::where('id', $id)->delete();
-        return redirect(route('kategori.index'));
+        if (Produk::where('kategori_id', $id)->count() <= 0) {
+            Kategori::where('id', $id)->delete();
+            alert()->success('sukses' , 'Data kategori berhasil di hapus !');
+            return redirect(route('kategori.index'));
+        }else{
+            alert()->error('error' , 'Data tidak bisa di hapus ! sudah di pakai di produk');
+            return redirect(route('kategori.index'));
+        }
     }
 }

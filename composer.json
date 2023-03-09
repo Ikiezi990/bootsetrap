@@ -1,7 +1,6 @@
 {
     "name": "bootsetrap/bootsetrapmd",
     "type": "library",
-    "description": "aaaaaaa",
     "license": "MIT",
     "authors": [
         {
@@ -9,6 +8,11 @@
             "email": "rizkifahrezi990@gmail.com"
         }
     ],
-
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Bootsetrap\\Bootsetrapmd\\": "src/"
+        }
+    },
     "require": {}
 }

@@ -32,3 +32,4 @@ Route::resource('produk', App\Http\Controllers\ProdukController::class)->middlew
 
 
 Route::resource('kategori', App\Http\Controllers\KategoriController::class)->middleware(['auth', 'level']);
+Route::get('laporanpdf', [App\Http\Controllers\LaporanPdfProduk::class, 'index'])->middleware(['auth', 'level'])->name('pdf.produk');

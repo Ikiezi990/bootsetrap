@@ -1,53 +1,51 @@
-@extends('layouts.app')
+@extends('layouts.appAdmin')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Menu Aplikasi') }}</div>
+@include('sweetalert::alert')
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <a href="{{ route('kategori.create') }}" class="btn btn-primary mb-2 pull-right"> <i class="ti-save"></i> Tambah</a>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive m-t-40">
+                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Kategori</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php
+                                $no = 1;
+                            @endphp
+                            @foreach ($kategori as $row)
+                                <tr>
+                                    <td>{{ $no++ }}</td>
+                                    <td>{{ $row->nama_kategori }}</td>
+                                    <td>
+                                        <div class="btn-group">
 
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-                        <div class="container">
-                            <a href="{{ route('kategori.create') }}" class="btn btn-primary mb-2">Tambah</a>
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama Kategori</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @php
-                                        $no = 1;
-                                    @endphp
-                                    @foreach ($kategori as $row)
-                                        <tr>
-                                            <td>{{ $no++ }}</td>
-                                            <td>{{ $row->nama_kategori }}</td>
-                                            <td>
-                                                <form action="{{ route('kategori.destroy', $row->id) }}" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger">Hapus</button>
-                                                </form>
-                                                <a href="{{ route('kategori.edit', $row->id) }}"
-                                                    class="btn btn-success">Edit</a>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                                            <form action="{{ route('kategori.destroy', $row->id) }}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger"> <i class="ti-trash"></i> </button>
+                                            </form>
+                                            <a href="{{ route('kategori.edit', $row->id) }}" class="btn btn-success"> <i class="ti-pencil"></i> 
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
+            <div class="card-footer"></div>
         </div>
     </div>
+</div>
 @endsection
